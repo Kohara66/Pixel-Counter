@@ -20,7 +20,7 @@ namespace Pixels_in_Windows
         private void Form1_Load(object sender, EventArgs e)
         {
             int pixels = getPixels();
-            PixelsLabel.Text = "This window contains" + pixels + "pixels " +  " pixels";
+            PixelsLabel.Text = "After resizing, this window contans" + pixels + "pixels " +  " pixels";
         }
         private int getPixels()
         {
@@ -28,6 +28,12 @@ namespace Pixels_in_Windows
         int width = this.Size.Width;
         int pixels =  height* width;
         return pixels;
-        }     
+        }
+
+        private void Form1_Resize(object sender, EventArgs e)
+        {
+            int pixels = getPixels();
+            PixelsLabel.Text = "After resizing, this window contains" + pixels + " pixels";
+        }
     }
 }
